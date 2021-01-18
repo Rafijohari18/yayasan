@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title', 'News')
+@section('title', Request::segment(1) == "news" ? "Berita" : "Pengumuman" )
 @section('content')
 
 <aside id="colorlib-hero">
@@ -11,8 +11,8 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-md-offset-3 col-xs-12 slider-text">
                             <div class="slider-text-inner text-center">
-                                <h1>News</h1>
-                                <h2 class="breadcrumbs"><span><a href="{{ url('/') }}">Home</a></span> | <span>News</span></h2>
+                                <h1>{{ Request::segment(1) == "news" ? "Berita" : "Pengumuman" }} Nurul 'Ilmi</h1>
+                                <h2 class="breadcrumbs"><span><a href="{{ url('/') }}">Home</a></span> | <span>{{ Request::segment(1) == "news" ? "Berita" : "Pengumuman" }} Nurul 'Ilmi</span></h2>
                             </div>
                         </div>
                     </div>

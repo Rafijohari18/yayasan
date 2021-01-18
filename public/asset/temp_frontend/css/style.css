@@ -117,7 +117,7 @@ figure {
 .colorlib-nav .upper-menu {
     width: 100%;
     padding: 15px 0;
-    background: #302a39;
+    background: #32cd32;
     -webkit-box-shadow: 0 15px 16px -6px rgba(0, 0, 0, 0.16);
     -moz-box-shadow: 0 15px 16px -6px rgba(0, 0, 0, 0.16);
     box-shadow: 0 15px 16px -6px rgba(0, 0, 0, 0.16);
@@ -173,6 +173,7 @@ figure {
 .colorlib-nav #colorlib-logo a {
     position: relative;
     color: #fff;
+    font-size: 35px;
 }
 @media screen and (max-width: 768px) {
     .colorlib-nav #colorlib-logo a {
@@ -544,7 +545,7 @@ figure {
     width: 100%;
     display: block;
     margin-top: -8em;
-    z-index: 9;
+    z-index: 2;
 }
 .colorlib-search .search-wrap-2 {
     background: #302a39;
@@ -776,8 +777,8 @@ figure {
     }
 }
 .about-desc .about-img-1 {
-    width: 70%;
-    height: 280px;
+    width: 100%;
+    height: 700px;
     float: left;
     -webkit-box-shadow: 26px 26px 78px -34px rgba(0, 0, 0, 0.52);
     -moz-box-shadow: 26px 26px 78px -34px rgba(0, 0, 0, 0.52);
@@ -1620,7 +1621,7 @@ input[type="text"] {
 }
 #colorlib-footer {
     padding-top: 6em;
-    background: #302a39;
+    background: #add8e6;
     color: rgba(255, 255, 255, 0.6) !important;
 }
 #colorlib-footer p {
@@ -1645,13 +1646,14 @@ input[type="text"] {
 }
 #colorlib-footer .f-blog .desc {
     padding: 0;
+    color: black;
 }
 #colorlib-footer .f-blog .desc h2 {
     font-size: 16px;
     margin-bottom: 5px;
 }
 #colorlib-footer .f-blog .desc h2 a {
-    color: #ccc;
+    color: black;
 }
 #colorlib-footer .f-blog .desc .admin {
     font-size: 13px;
@@ -1674,13 +1676,14 @@ input[type="text"] {
 }
 #colorlib-footer .colorlib-footer-links li {
     padding: 0;
+    color: black;
     margin: 0 0 10px;
     list-style: none;
     display: block;
     font-size: 14px;
 }
 #colorlib-footer .colorlib-footer-links li a {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
     text-decoration: none;
 }
 #colorlib-footer .colorlib-footer-links li a i {
@@ -1696,7 +1699,7 @@ input[type="text"] {
 #colorlib-footer h4 {
     margin-bottom: 30px;
     font-size: 13px;
-    color: #e6e6e6;
+    color: black;
     text-transform: uppercase;
     font-weight: 500;
 }

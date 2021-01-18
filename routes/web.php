@@ -40,11 +40,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     Route::get('/kontak', 'App\Http\Controllers\Frontend\InformasiController@kontak')->name('kontak');
     Route::get('/preview/slider/{id}', 'App\Http\Controllers\Frontend\InformasiController@prevslider')->name('preview.slider');
     
-    Route::get('/tentang-kami', 'App\Http\Controllers\Frontend\InformasiController@tentang')->name('tentang.index');
+    Route::get('/visi-misi', 'App\Http\Controllers\Frontend\InformasiController@tentang')->name('tentang.index');
+    Route::get('/pengurus', 'App\Http\Controllers\Frontend\InformasiController@pengurus')->name('pengurus.index');
+    Route::get('/program-kerja', 'App\Http\Controllers\Frontend\InformasiController@programKerja')->name('program.kerja.index');
     Route::get('/profil-alumni', 'App\Http\Controllers\Frontend\InformasiController@profilAlumni')->name('profil-alumni.index');
     Route::get('/gallery', 'App\Http\Controllers\Frontend\InformasiController@gallery')->name('gallery.index');
 
     Route::get('news', 'App\Http\Controllers\Frontend\NewsController@index')->name('news.index');
+    Route::get('pengumuman', 'App\Http\Controllers\Frontend\NewsController@pengumuman')->name('pengumuman.index');
     Route::get('news/{slug}', 'App\Http\Controllers\Frontend\NewsController@detail')->name('berita.detail');
 
 

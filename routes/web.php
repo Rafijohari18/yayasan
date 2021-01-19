@@ -46,11 +46,17 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     Route::get('/profil-alumni', 'App\Http\Controllers\Frontend\InformasiController@profilAlumni')->name('profil-alumni.index');
     Route::get('/gallery', 'App\Http\Controllers\Frontend\InformasiController@gallery')->name('gallery.index');
 
+     Route::get('/panduan-ppdb', 'App\Http\Controllers\Frontend\InformasiController@panduanPPDB')->name('panduan.ppdb.index');
+     
+      Route::get('/pengumuman-ppdb', 'App\Http\Controllers\Frontend\InformasiController@pengumumanPPDB')->name('pengumuman.ppdb.index');
+
+
     Route::get('news', 'App\Http\Controllers\Frontend\NewsController@index')->name('news.index');
     Route::get('pengumuman', 'App\Http\Controllers\Frontend\NewsController@pengumuman')->name('pengumuman.index');
     Route::get('news/{slug}', 'App\Http\Controllers\Frontend\NewsController@detail')->name('berita.detail');
 
-
+    
+    
     
 
 

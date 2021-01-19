@@ -90,6 +90,20 @@ class InformasiController extends Controller
         return view('frontend.programKerja',compact('data'));
         
     }
+    
+    public function panduanPPDB(){
+        $data['title']  = 'Panduan Daftar Ulang';
+        $data['program'] = PageLang::where('id',9)->first();
+        return view('frontend.programKerja',compact('data'));
+    }
+    
+    public function pengumumanPPDB(){
+        $data['title']  = 'Pengumuman Hasil PPDB';
+        $data['program'] = PageLang::where('id',10)->first();
+        return view('frontend.programKerja',compact('data'));
+    }
+    
+    
     public function profilAlumni()
     {
     
@@ -100,8 +114,8 @@ class InformasiController extends Controller
 
     public function gallery()
     {
-        $data['album']     = Album::whereNotIn('id',[3,4])->get();
-        $data['photo']     = Photo::whereNotIn('album_id',[3,4])->with('album')->get();
+        $data['album']     = Album::whereNotIn('id',[3,4,5,6])->get();
+        $data['photo']     = Photo::whereNotIn('album_id',[3,4,5,6])->with('album')->get();
      
     
         return view('frontend.gallery',compact('data'));

@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Program Kerja Yayasan')
+@section('title',$data['title'])
 @section('content')
 
 <aside id="colorlib-hero">
@@ -11,8 +11,8 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-md-offset-3 col-xs-12 slider-text">
                             <div class="slider-text-inner text-center">
-                                <h1>Program Kerja Yayasan</h1>
-                                <h2 class="breadcrumbs"><span><a href="{{ url('/') }}">Home</a></span> | <span>Program Kerja Yayasan</span></h2>
+                                <h1>{{ $data['title'] }}</h1>
+                                <h2 class="breadcrumbs"><span><a href="{{ url('/') }}">Home</a></span> | <span>{{ $data['title'] }}</span></h2>
                             </div>
                         </div>
                     </div>

@@ -1,2 +1,4 @@
 [19-Jan-2021 00:26:52 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 266240 bytes) in /home/ypibmmud/yayasan/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php on line 187
 [19-Jan-2021 00:26:52 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/ypibmmud/yayasan/vendor/laravel/framework/src/Illuminate/Log/Logger.php on line 231
+[19-Jan-2021 21:33:05 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 266240 bytes) in /home/ypibmmud/yayasan/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php on line 187
+[19-Jan-2021 21:33:05 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 65536 bytes) in /home/ypibmmud/yayasan/vendor/laravel/framework/src/Illuminate/Cookie/CookieJar.php on line 11

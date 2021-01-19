@@ -134,8 +134,8 @@ class AppServiceProvider extends ServiceProvider
             'slider'            => Slider::all(),
 
             //program unggulan
-            'album_unggulan'     => Album::whereIn('id',[3,4])->get(),
-            'photo_unggulan'     => Photo::whereIn('album_id',[3,4])->with('album')->get(),
+            'album_unggulan'     => Album::whereIn('id',[3,4,5,6])->get(),
+            'photo_unggulan'     => Photo::whereIn('album_id',[3,4,5,6])->with('album')->get(),
 
             //category content
             'tit_keunggulan'    => CategoryContent::where('id',8)->first(),

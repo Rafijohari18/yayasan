@@ -131,7 +131,7 @@ figure {
     margin-bottom: 0;
     display: inline-block;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.8);
+    color: black;
 }
 .colorlib-nav .upper-menu .colorlib-social-icons {
     display: inline-block;
@@ -152,14 +152,14 @@ figure {
 }
 .colorlib-nav .upper-menu .btn-apply a {
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.8);
+    color: black;
 }
 .colorlib-nav .top-menu {
     padding: 40px 0;
 }
 @media screen and (max-width: 768px) {
     .colorlib-nav .top-menu {
-        padding: 28px 1em;
+        padding: 15px 1em;
         background: #fff;
     }
 }
@@ -548,7 +548,7 @@ figure {
     z-index: 2;
 }
 .colorlib-search .search-wrap-2 {
-    background: #302a39;
+    background: #32cd32;
     padding: 35px;
     -webkit-box-shadow: 0 15px 46px -24px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: 0 15px 46px -24px rgba(0, 0, 0, 0.41);
@@ -1621,7 +1621,7 @@ input[type="text"] {
 }
 #colorlib-footer {
     padding-top: 6em;
-    background: #add8e6;
+    background: #32cd32;
     color: rgba(255, 255, 255, 0.6) !important;
 }
 #colorlib-footer p {
@@ -1708,10 +1708,10 @@ input[type="text"] {
 }
 #colorlib-footer .copy p {
     margin-bottom: 0;
-    color: #fff;
+    color: black;
 }
 #colorlib-footer .copy p small a {
-    color: rgba(255, 255, 255, 0.7);
+    color: black;
 }
 #map {
     width: 100%;

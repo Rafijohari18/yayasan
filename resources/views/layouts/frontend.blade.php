@@ -54,6 +54,24 @@
 
 
 <style>
+
+@media screen and (min-width: 769px)  {
+	.hide-font-header{
+		display:none;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.colorlib-nav-toggle {
+		position : fixed;
+	}
+
+}
+
+#colorlib-logo img {
+	width:65px;
+	height:auto;
+}
 /* sticky */
 .sticky{
 	position: fixed;
@@ -63,9 +81,7 @@
   	background-color: #32CD32;
 	z-index:9999;
 }
-.hide-font-header{
-	display:none;
-}
+
 
 /* end */
 
@@ -83,6 +99,8 @@
 	#colorlib-logo img{
 		margin-left:0;
 		margin-top: 0px;
+		float:left;
+		width:50px;
 
 	}
 }
@@ -151,7 +169,7 @@
 					<div class="row">
 						<div class="col-md-5">
 							<div id="colorlib-logo">
-								<img src="{{  asset('asset/temp_frontend/images/logo.png')}}" id="img-title"  style="width:65px;height:auto;"><br>
+								<img src="{{  asset('asset/temp_frontend/images/logo.png')}}" id="img-title"><br>
 								<h5 class="text-white yayasan-title" id="yayasan-title">Yayasan Pendidikan Islam BM MUDA</h5>
 								<a href="{{ url ('/') }}">{{ $app_name->value }}</a>
 								
@@ -164,7 +182,7 @@
 								<li class="{{ $segment1 == null ? 'active' : '' }}"><a href="{{ url ('/') }}">Home</a></li>
 								
 								<li class="has-dropdown {{ $segment1 == 'tentang-kami' || $segment1 == 'pengurus' || $segment1 == 'program-kerja' ? 'active' : '' }}">
-									<a href="">Tentang Kami</a>
+									<a href="javascript:void(0);">Tentang Kami</a>
 									<ul class="dropdown">
 										<li class="{{ $segment1 == 'visi-misi' ? 'active' : '' }}"><a href="{{ route('tentang.index') }}">Visi Misi</a></li>
 										<li class="{{ $segment1 == 'pengurus' ? 'active' : '' }}"><a href="{{  route('pengurus.index') }}">Pengurus Yayasan</a></li>						
@@ -251,7 +269,7 @@
 							<p>
 								<small class="block"> 
 									Copyright &copy; 2021 - {{  $app_name->value }} <br>
-									Powered By : CV Hidayah Jaya Techno
+									Powered By : <a class="text-dark" href="https://api.whatsapp.com/send?phone=6282285178213&text=Hallo!%20Saya%20ingin%20mengetahui%20informasi%20lebih%20lanjut" target="_blank">CV Hidayah Jaya Techno</a> 
 								</small><br>
 								
 							</p>

@@ -144,7 +144,7 @@
 						<div class="col-xs-6 col-md-push-2 text-right">
 							
 							<p class="btn-apply">
-								<a title="Login" href="{{ url('login') }}">
+								<a title="Login" href="{{ route('login') }}">
 									<i class="fa fa-user"></i> Login | 
 								</a>
 								<a title="Telephon" href="">
@@ -167,7 +167,7 @@
 			<div class="top-menu" id="top-menus">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<div id="colorlib-logo">
 								<img src="{{  asset('asset/temp_frontend/images/logo.png')}}" id="img-title"><br>
 								<h5 class="text-white yayasan-title" id="yayasan-title">Yayasan Pendidikan Islam BM MUDA</h5>
@@ -177,7 +177,7 @@
 							
 							</div>
 						</div>
-						<div class="col-md-8 text-right menu-1">
+						<div class="col-md-9 text-right menu-1">
 							<ul >
 								<li class="{{ $segment1 == null ? 'active' : '' }}"><a href="{{ url ('/') }}">Home</a></li>
 								
@@ -204,7 +204,7 @@
 										<li class="{{ $segment1 == 'pengumuman-ppdb' ? 'active' : '' }}"><a href="{{  route('pengumuman.ppdb.index') }}">Pengumuman Hasil PPDB</a></li>						
 									</ul>
 								</li>
-								
+								<li><a href="https://docs.google.com/forms/d/1j1C1Vzcl8WFjKygCbqFzkJM4AZyu61OYu8Kt6GZEXQs/edit?usp=sharing" target="_blank">Kotak Saran</a></li>
 								<!-- <li class="btn-cta"><a href="#"><span>Get started</span></a></li> -->
 							</ul>
 						</div>

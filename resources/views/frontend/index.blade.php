@@ -101,7 +101,7 @@
 		<div class="row">
 			<div class="col-md-12 colorlib-heading center-heading text-center animate-box">
 				<h1 class="heading-big">Keunggulan Kami</h1>
-				<h2>{{ $tit_keunggulan->title }}</h2>
+				<h2>Keunggulan Kami</h2>
 			</div>
 
 			<div class="col-md-12 services-wrap">
@@ -110,7 +110,7 @@
 					<div class="col-md-4 col-sm-12 text-center animate-box">
 						<a href="" class="services">
 							<span class="icon">
-								<i class="flaticon-desktop"></i>
+								<img src="{{ asset($unggulan->cover) }}" style="width:100px;height:auto;">
 							</span>
 							<div class="desc">
 								<h3>{{ $unggulan->title }}</h3>

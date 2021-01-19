@@ -76,6 +76,20 @@ class InformasiController extends Controller
         return view('frontend.tentang',compact('data'));
     }
 
+    public function pengurus()
+    {
+        $data['title']  = 'Profil Pengurus Yayasan';
+        return view('frontend.pengurus',compact('data'));
+        
+    }
+
+    public function programKerja()
+    {
+        $data['title']  = 'Program Kerja';
+        $data['program'] = PageLang::where('id',7)->first();
+        return view('frontend.programKerja',compact('data'));
+        
+    }
     public function profilAlumni()
     {
     
@@ -86,8 +100,8 @@ class InformasiController extends Controller
 
     public function gallery()
     {
-        $data['album']     = Album::all();
-        $data['photo']     = Photo::with('album')->get();
+        $data['album']     = Album::whereNotIn('id',[3,4])->get();
+        $data['photo']     = Photo::whereNotIn('album_id',[3,4])->with('album')->get();
      
     
         return view('frontend.gallery',compact('data'));

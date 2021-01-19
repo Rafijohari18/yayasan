@@ -63,6 +63,9 @@ use App\Models\Page;
 use App\Models\PageMedia;
 use App\Models\Slider;
 use App\Models\Content;
+use App\Models\Video;
+use App\Models\Album;
+use App\Models\Photo;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -129,14 +132,26 @@ class AppServiceProvider extends ServiceProvider
             'foto_ketua'        => PageMedia::where('page_id',1)->get(),
             //slider
             'slider'            => Slider::all(),
+
+            //program unggulan
+            'album_unggulan'     => Album::whereIn('id',[3,4])->get(),
+            'photo_unggulan'     => Photo::whereIn('album_id',[3,4])->with('album')->get(),
+
+            //category content
+            'tit_keunggulan'    => CategoryContent::where('id',8)->first(),
             
             //content
             'sekolah_yayasan'   => Content::where('category_content_id',6)->orderBy('id','DESC')->get(),
+            'keunggulan'        => Content::where('category_content_id',8)->orderBy('id','DESC')->get(),
+            'guru'              => Content::where('category_content_id',9)->orderBy('id','DESC')->get(),
+            'jumlah_yayasan'    => Content::where('category_content_id',10)->orderBy('id','DESC')->get(),
             'berita_terbaru'    => Content::where('category_content_id',7)->orderBy('id','DESC')->take(8)->get(),
 
             'berita_terbaru_2'  => Content::where('category_content_id',7)->orderBy('id','DESC')->take(2)->get(),
 
+            'video'             => Video::where('playlist_id',1)->get(),
             
+
             'logo'              => Config::where('id',9)->first(),
             'background'        => Config::where('id',8)->first(),
             'alamat'            => Config::where('id',1)->first(),

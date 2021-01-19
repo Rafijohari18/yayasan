@@ -18,7 +18,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    border-bottom: 3px solid #302a39;
+    border-bottom: 3px solid #4686FF;
 }
 
 .isotope-nav ul li {
@@ -40,7 +40,7 @@
 
 .isotope-nav ul a.active {
     color: white;
-    background: #302a39;
+    background: #4686FF;
 }
 
 /* Project Isotope Item */
@@ -90,7 +90,7 @@
     right: 0;
     z-index: 1;
     padding: 5px 12px;
-    background: #302a39;
+    background: #4686FF;
     color: #fff;
     opacity: 0;
     -webkit-transform: perspective(1px) scale3d(0, 0, 0);
@@ -143,7 +143,7 @@
 }
 
 .project-cat {
-    background: #302a39;
+    background: #4686FF;
     display: inline-block;
     padding: 2px 8px;
     font-weight: 700;
@@ -151,6 +151,7 @@
     font-size: 10px;
     text-transform: uppercase;
 }
+
 
 
 

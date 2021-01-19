@@ -18,7 +18,7 @@
 <meta name="author" content="Rafi Johari" />
 
 <meta property="og:title" content="" />
-<meta property="og:image" content="{{ asset('asset/temp_backend/images/favicon.ico') }}" />
+<meta property="og:image" content="{{  asset('asset/temp_frontend/images/favicon.png')}}" />
 <meta property="og:url" content="" />
 <meta property="og:site_name" content="" />
 <meta property="og:description" content="" />
@@ -27,6 +27,8 @@
 <meta name="twitter:url" content="" />
 <meta name="twitter:card" content="" />
 <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('asset/temp_frontend/images/favicon.png')}}">
 
 <link rel="stylesheet" href="{{ asset('asset/temp_frontend/css/animate.css') }}">
 
@@ -45,6 +47,66 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
 <link rel="stylesheet" href="{{ asset('asset/temp_frontend/css/style.css') }}">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Animation -->
+<link rel='stylesheet' id='preloader-plus-css'  href="{{ asset('asset/temp_frontend/css/preloader.css') }}" media='all' />
+
+
+<style>
+/* sticky */
+.sticky{
+	position: fixed;
+    top: 0;
+  	left: 0;
+  	width: 100%;
+  	background-color: #32CD32;
+	z-index:9999;
+}
+.hide-font-header{
+	display:none;
+}
+
+/* end */
+
+.yayasan-title{
+	margin: 0;
+	color:white;
+}
+
+#colorlib-logo img{
+	margin-left:20%;	
+    margin-top: -15px;
+}
+
+@media screen and (max-width: 768px) {
+	#colorlib-logo img{
+		margin-left:0;
+		margin-top: 0px;
+
+	}
+}
+
+.owl-nav{
+	display:none;
+}
+
+.scrollwa {
+	background-color: green;
+	border-radius: 100%;
+	bottom: 90px;
+	color: #ffffff;
+	font-size: 24px;
+	height: 50px;
+	line-height: 50px;
+	position: fixed;
+	right: 20px;
+	text-align: center;
+	width: 50px;
+	z-index: 99;
+}
+</style>
+
 @yield('css')
 
 
@@ -58,11 +120,18 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-4">
-							<p>{{ $alamat->value }}</p>
+							
+							<p>Kunjungi Web Kami : Yayasan | SD | SMP | SMA</p>
 						</div>
 						<div class="col-xs-6 col-md-push-2 text-right">
-					
+							
 							<p class="btn-apply">
+								<a title="Login" href="{{ url('login') }}">
+									<i class="fa fa-user"></i> Login | 
+								</a>
+								<a title="Telephon" href="">
+									<i class="fa fa-phone"></i> Hubungi Kami |  {{ $no_hp->value }} (WA dan Phone)
+								</a>
 								<a title="Facebook" href="{{ $fb->value }}">
 									<i class="icon-facebook"></i>
 								</a>
@@ -77,20 +146,36 @@
 					</div>
 				</div>
 			</div>
-			<div class="top-menu">
+			<div class="top-menu" id="top-menus">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-2">
-							<div id="colorlib-logo"><a href="{{ url ('/') }}">{{ $app_name->value }}</a></div>
+						<div class="col-md-5">
+							<div id="colorlib-logo">
+								<img src="{{  asset('asset/temp_frontend/images/logo.png')}}" id="img-title"  style="width:65px;height:auto;"><br>
+								<h5 class="text-white yayasan-title" id="yayasan-title">Yayasan Pendidikan Islam BM MUDA</h5>
+								<a href="{{ url ('/') }}">{{ $app_name->value }}</a>
+								
+								<h5 class="text-white yayasan-title" id="yayasan-title" style="font-size:10px;">SD-IT,SMP,SMA Nurul 'Ilmi - Boarding / Full Days School</h5>
+							
+							</div>
 						</div>
-						<div class="col-md-10 text-right menu-1">
-							<ul>
+						<div class="col-md-7 text-right menu-1">
+							<ul >
 								<li class="{{ $segment1 == null ? 'active' : '' }}"><a href="{{ url ('/') }}">Home</a></li>
 								
-								<li class="{{ $segment1 == 'tentang-kami' ? 'active' : '' }}"><a href="{{ route('tentang.index') }}">Tentang Kami</a></li>
+								<li class="has-dropdown {{ $segment1 == 'tentang-kami' || $segment1 == 'pengurus' || $segment1 == 'program-kerja' ? 'active' : '' }}">
+									<a href="">Tentang Kami</a>
+									<ul class="dropdown">
+										<li class="{{ $segment1 == 'visi-misi' ? 'active' : '' }}"><a href="{{ route('tentang.index') }}">Visi Misi</a></li>
+										<li class="{{ $segment1 == 'pengurus' ? 'active' : '' }}"><a href="{{  route('pengurus.index') }}">Pengurus Yayasan</a></li>						
+										<li class="{{ $segment1 == 'program-kerja' ? 'active' : '' }}"><a href="{{  route('program.kerja.index') }}">Program Kerja Yayasan</a></li>						
+									</ul>
+								</li>
+								
 								<li class="{{ $segment1 == 'profil-alumni' ? 'active' : '' }}"><a href="{{ route('profil-alumni.index') }} ">Profil Alumni</a></li>
 								<li class="{{ $segment1 == 'gallery' ? 'active' : '' }}"><a href="{{ route('gallery.index') }}">Gallery</a></li>
-								<li class="{{ $segment1 == 'news' ? 'active' : '' }}"><a href="{{ route('news.index') }}">News</a></li>
+								<li class="{{ $segment1 == 'news' ? 'active' : '' }}"><a href="{{ route('news.index') }}">Berita</a></li>
+								<li class="{{ $segment1 == 'pengumuman' ? 'active' : '' }}"><a href="{{ route('pengumuman.index') }}">Pengumuman</a></li>
 								<li class="{{ $segment1 == 'kontak' ? 'active' : '' }}"><a href="{{ route('kontak') }}">Kontak</a></li>
 								<!-- <li class="btn-cta"><a href="#"><span>Get started</span></a></li> -->
 							</ul>
@@ -108,7 +193,7 @@
 			<div class="container">
 				<div class="row row-pb-md">
 					<div class="col-md-3 colorlib-widget">
-						<h4>Hubungi Kami</h4>
+						<h4 class="font-dark">Hubungi Kami</h4>
 						<ul class="colorlib-footer-links">
 							<li>{{ $alamat->value }}</li>
 							<li><a href="tel://{{ $no_hp->value }}"><i class="icon-phone"></i> + {{ $no_hp->value }}</a></li>
@@ -165,7 +250,8 @@
 						<div class="col-md-12 text-center">
 							<p>
 								<small class="block"> 
-									Copyright &copy; 2021 - {{  $app_name->value }} 
+									Copyright &copy; 2021 - {{  $app_name->value }} <br>
+									Powered By : CV Hidayah Jaya Techno
 								</small><br>
 								
 							</p>
@@ -175,10 +261,41 @@
 			</div>
 		</footer>
 	</div>
+
+	<a href="https://api.whatsapp.com/send?phone=6281269222129&text=Hallo!%20Saya%20ingin%20mengetahui%20informasi%20lebih%20lanjut" target="_blank" class="scrollwa">
+		<i class="fa fa-whatsapp"></i>
+	</a>
+		
+
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
 	</div>
 
+
+	<div class="preloader-plus"> 			 
+		<div class="preloader-content">   	 					
+				<img class="preloader-custom-img" src="{{ asset('asset/temp_frontend/images/logo.png')}}" /> 
+		</div>
+	</div>
+
+	<script>
+		// scroll
+		window.onscroll = function() {myFunction()};
+
+			var navbar 		= document.getElementById("top-menus");
+			var logo  		= document.getElementById("colorlib-logo");
+			var sticky 		= navbar.offsetTop;
+
+			function myFunction() {
+			if (window.pageYOffset >= sticky) {
+				navbar.classList.add("sticky")
+				logo.classList.add("hide-font-header")
+			} else {
+				navbar.classList.remove("sticky");
+				logo.classList.remove("hide-font-header");
+			}
+			}
+	</script>
 	<script src="{{ asset('asset/temp_frontend/js/jquery.min.js') }}"></script>
 
 	<script src="{{ asset('asset/temp_frontend/js/jquery.easing.1.3.js') }}"></script>
@@ -199,7 +316,13 @@
 	<script src="{{ asset('asset/temp_frontend/js/jquery.countTo.js') }}"></script>
 
 	<script src="{{ asset('asset/temp_frontend/js/main.js') }}"></script>
-
+	<script id='preloader-plus-js-extra'>
+		var preloader_plus = {"animation_delay":"500","animation_duration":"1000"};
+	</script>
+	
+	<script src="{{ asset('asset/temp_frontend/js/preloader.js') }}" id='preloader-plus-js'></script>
+	
+	
 	@yield('js')
 
 </body>

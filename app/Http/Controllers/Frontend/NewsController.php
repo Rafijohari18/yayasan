@@ -38,6 +38,16 @@ class NewsController extends Controller
         return view('frontend.berita',compact('data'));
     }
 
+    public function pengumuman()
+    {
+        $data['news'] = Content::where('category_content_id',12)->get();
+        
+        $data['content_news']   = Content::where('category_content_id',12)
+        ->get()->take(3);
+
+        return view('frontend.berita',compact('data'));
+    }
+
     public function detail(Request $request, $slug)
     {
         $data['content']        = Content::where('slug',$slug)->first();

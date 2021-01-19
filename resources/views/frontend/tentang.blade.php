@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Tentang Kami - Yayasan Nurul Ilmi')
+@section('title','Visi Misi - Yayasan Nurul Ilmi')
 @section('css')
 @endsection
 
@@ -14,8 +14,8 @@
 							<div class="row">
 								<div class="col-md-6 col-sm-12 col-md-offset-3 col-xs-12 slider-text">
 									<div class="slider-text-inner text-center">
-										<h1>Tentang Kami</h1>
-										<h2 class="breadcrumbs"><span><a href="{{ url('/') }}">Home</a></span> | <span>Tentang Kami</span></h2>
+										<h1>Visi Misi</h1>
+										<h2 class="breadcrumbs"><span><a href="{{ url('/') }}">Home</a></span> | <span>Visi Misi</span></h2>
 									</div>
 								</div>
 							</div>
@@ -25,33 +25,7 @@
 			</div>
 		</aside>
 		
-		<div id="colorlib-counter" class="colorlib-counters">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-7">
-						<div class="about-desc">
-                            @foreach($data['foto_ketua'] as $key => $foto)
-							<div class="about-img-{{ $key + 1}} animate-box" style="background-image: url({{ asset($foto->file) }});"></div>
-							@endforeach
-						</div>
-					</div>
-					<div class="col-md-5">
-						<div class="row">
-							<div class="col-md-12 colorlib-heading animate-box">
-								<h1 class="heading-big">{{ $data['sambutan']->title }}</h1>
-								<h2>{{ $data['sambutan']->title }} </h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 animate-box">
-								{!! $data['sambutan']->content !!}
-							</div>
-						
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<div class="colorlib-about">
 			<div class="container">
 				<div class="row">
